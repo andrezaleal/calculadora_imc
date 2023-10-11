@@ -3,7 +3,7 @@ class Pessoa {
   double _peso = 0;
   double _altura = 0;
 
-  Pessoa(String nome, altura, peso){
+  Pessoa(String nome, altura, peso) {
     _nome = nome;
     _peso = peso;
     _altura = altura;
@@ -33,9 +33,31 @@ class Pessoa {
     return _altura;
   }
 
+   String situacaoImc(double imc) {
+    if (imc < 16) {
+      return "Magreza grave";
+    } else if (imc > 16 && imc < 17) {
+      return "Magreza moderada";
+    } else if (imc > 17 && imc < 18.5) {
+      return "Magreza leve";
+    } else if (imc > 18.5 && imc < 25) {
+      return "Saudável";
+    } else if (imc > 25 && imc < 30) {
+      return "Sobrepeso";
+    } else if (imc > 30 && imc < 35) {
+      return "Obesidade Grau I";
+    } else if (imc > 35 && imc < 40) {
+      return "Obesidade Garu II (severa)";
+    } else {
+      return "Obesidade Garu III (móbida)";
+    }
+  }
+
   String calculadoraImc() {
     var imc = _peso / (_altura * _altura);
     var imcFormatado = imc.toStringAsFixed(2);
     return imcFormatado;
   }
+
+ 
 }

@@ -54,5 +54,5 @@ void execute() {
   }
 
   var pessoa = Pessoa(nome, altura, peso);
-  print("O IMC do(a) ${pessoa.getNome()} é ${pessoa.calculadoraImc()}");
+  print("O IMC do(a) ${pessoa.getNome()} é ${pessoa.calculadoraImc()}, a classificação desse IMC é ${pessoa.situacaoImc(double.parse(pessoa.calculadoraImc()))}");
 }
